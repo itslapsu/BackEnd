@@ -1,0 +1,67 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    font-family: "Lexend", sans-serif;
+}
+
+input {
+    all: unset;
+}
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #cecece;
+    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.54);
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__input {
+    height: 32px;
+    width: 50%;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    border-color: transparent;
+    background-color: #fff;
+    padding-left: 10px;
+}
+
+.form__btn {
+    width: 39px;
+    border: 0 solid transparent;
+    background-color: #fff;
+    transform: translateX(-5px);
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.result {
+    padding-top: 32px;
+}
+
+.result__link {
+    text-decoration: none;
+    color: #000;
+}
+
+.result__link:hover {
+    text-decoration: underline;
+}
+
+.result__displaylink {
+    font-size: 12px;
+    color: #738651;
+}
+
+.result__snippet {
+    margin-bottom: 10px;
+}
