@@ -37,6 +37,8 @@ $results = json_decode($response, true);
     foreach ($results['items'] as $item) {
         echo "<a class='result__link' href={$item['link']}>";
         echo "<p class='result__title'>{$item['title']}</p>";
+        echo "<p class='result__displaylink'>{$item['displayLink']}</p>";
+        echo "<p class='result__snippet'>{$item['snippet']}</p>";
         echo "</a>";
     }
     ?>
