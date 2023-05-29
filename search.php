@@ -1,7 +1,7 @@
 <?php
 $searchTerm = $_GET['search']; // получаем поисковый запрос от пользователя
-$apiKey = 'AIzaSyBtW2Z1UTOiGQOf6YR0EwhNqXF4_zitmuk'; // ваш API-ключ
-$searchEngineId = 'e00dd44c8912341b5'; // ID поисковика, который вы создали
+$apiKey = 'AIzaSyBtW2Z1UTOiGQOf6YR0EwhNqXF4_zitmuk'; // API-ключ
+$searchEngineId = 'e00dd44c8912341b5'; // ID поисковика
 
 // формируем URL для запроса к API
 $url = 'https://www.googleapis.com/customsearch/v1?' .
@@ -19,22 +19,27 @@ $results = json_decode($response, true);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Search</title>
 </head>
 <body>
-<h2>Search by slap.</h2>
-<form method="GET" action="/search.php">
-    <label for="search"></label>
-    <input type="text" id="search" name="search" value="<?php if (isset($_GET['search'])) {echo $_GET['search'];}?>"><br><br>
-    <input type="submit" value="Search">
-</form>
-<?php
-// выводим результаты поиска
-foreach ($results['items'] as $item) {
-    echo "<a href={$item['link']}>";
-    echo "<p>{$item['title']}</p>";
-    echo "</a>";
-}
-?>
+<header class="header">
+    <div class="container">
+        <form class="form" method="GET" action="./search.php">
+            <input class="form__input" type="input" id="search" name="search" value="<?php if (isset($_GET['search'])) {echo $_GET['search'];}?>"><br><br>
+            <button class="form__btn" type="submit"><img src="./img/search.svg" alt=""></button>
+        </form>
+    </div>
+</header>
+<div class="container result">
+    <?php
+    // выводим результаты поиска
+    foreach ($results['items'] as $item) {
+        echo "<a class='result__link' href={$item['link']}>";
+        echo "<p class='result__title'>{$item['title']}</p>";
+        echo "</a>";
+    }
+    ?>
+</div>
 </body>
 </html>
